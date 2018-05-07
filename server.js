@@ -12,11 +12,11 @@ io.on("connection", function(socket){
     socket.on("pressed", function(data){
         counter++;
         console.log(counter);
-        io.socket.emit("button_counter", {counter: counter});
+        io.sockets.emit("button_counter", {counter: counter});
         console.log(counter);
     });
     socket.on("reset", function(data){
         counter = 0;
-        io.socket.emit("button_counter", {counter: counter});
+        io.sockets.emit("button_counter", {counter: counter});
     });
 });
